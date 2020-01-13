@@ -16,7 +16,7 @@ client : src/http_client.cpp
 	-lpthread -lssl -lcrypto
 
 xml : src/libxml_client.cpp
-	clang++ -g -std=c++17 \
+	clang++ -O2 -std=c++17 \
 	src/libxml_client.cpp \
 	`xml2-config --cflags --libs` `pkg-config libxml++-5.0 --cflags --libs` \
 	-o xml \

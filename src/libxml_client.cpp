@@ -1,5 +1,5 @@
-#include <libxml/tree.h>
-#include <libxml/HTMLparser.h>
+#include <libxml2/libxml/tree.h>
+#include <libxml2/libxml/HTMLparser.h>
 #include <libxml++-5.0/libxml++/libxml++.h>
 
 using namespace std;
