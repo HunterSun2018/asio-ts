@@ -1,4 +1,4 @@
-all : demo client
+all : demo client xml
 
 demo : src/main.cpp
 	clang++ \
@@ -15,5 +15,12 @@ client : src/http_client.cpp
 	-o client \
 	-lpthread -lssl -lcrypto
 
+xml : src/libxml_client.cpp
+	clang++ -g -std=c++17 \
+	src/libxml_client.cpp \
+	`xml2-config --cflags --libs` `pkg-config libxml++-5.0 --cflags --libs` \
+	-o xml \
+	-lcurlpp -lcurl
+
 clean : 
-	rm -f demo client
+	rm -f demo client xml
